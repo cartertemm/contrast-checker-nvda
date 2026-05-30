@@ -1,9 +1,17 @@
 # Linearize, luminence, and contrast derivation formulae taken from
 # https://www.w3.org/TR/WCAG20-TECHS/G17.html
 
+import logging
+log = logging.getLogger(__name__)
+import addonHandler
 import globalPluginHandler
 import speech
 import colors
+
+try:
+	addonHandler.initTranslation()
+except addonHandler.AddonError:
+	log.warning("Couldn't initialise translations. Is this addon running from NVDA's scratchpad directory?")
 
 
 _orig = None
@@ -41,7 +49,8 @@ def _patched_getFormatFieldSpeech(attrs, attrsCache=None, formatConfig=None, **k
 	if getattr(bg, "alphaValue", colors.ALPHA_OPAQUE) == colors.ALPHA_TRANSPARENT:
 		return sequence
 	ratio = _contrast_ratio(fg, bg)
-	return list(sequence) + [f"{_hex(fg)} on {_hex(bg)}, contrast {ratio:.1f}:1"]
+	# Translators: Spoken message reporting the foreground color, background color, and their contrast ratio. {fg} and {bg} are hex color codes, {ratio} is a number like 4.5
+	return list(sequence) + [_("{fg} on {bg}, contrast {ratio}:1").format(fg=_hex(fg), bg=_hex(bg), ratio=f"{ratio:.1f}")]
 
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
