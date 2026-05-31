@@ -8,36 +8,418 @@
 			font-family: sans-serif;
 			background: #ffffff;
 			padding: 2em;
+			margin: 0;
 		}
 
-		p {
-			font-size: 1.1em;
-			padding: 0.5em;
-			margin-bottom: 1em;
+		h2 {
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 0.25em;
+			margin-top: 2em;
 		}
 
-		.fail {
+		.case {
+			margin-bottom: 3em;
+		}
+
+		.case > p {
+			margin: 0 0 0.5em;
+			font-size: 0.85em;
+			color: #555;
+		}
+
+		/* Base button — each focus class below overrides outline individually */
+		button {
+			background: #f0f0f0;
+			border: 1px solid #555555;
+			padding: 0.5em 1.5em;
+			font-size: 1em;
+			cursor: pointer;
+			display: block;
+		}
+
+
+		/* ========================
+		   Text contrast
+		   ======================== */
+		.text-fail {
 			/* #999999 on #ffffff = 2.85:1, fails 3:1 */
 			color: #999999;
-			background-color: #ffffff;
 		}
 
-		.pass {
-			/* #595959 on #ffffff = 7.0:1, passes 3:1 and WCAG AA */
+		.text-pass {
+			/* #595959 on #ffffff = 7.0:1, passes AA */
 			color: #595959;
-			background-color: #ffffff;
+		}
+
+
+		/* ========================
+		   Controlled ring contrast, white background
+		   ======================== */
+		.ring-fail-3:focus {
+			/* #b0b0b0 on #ffffff = ~2.2:1 */
+			outline: 3px solid #b0b0b0;
+		}
+
+		.ring-fail-4-5:focus {
+			/* #888888 on #ffffff = ~3.5:1 */
+			outline: 3px solid #888888;
+		}
+
+		.ring-pass-7:focus {
+			/* #000000 on #ffffff = 21:1 */
+			outline: 3px solid #000000;
+		}
+
+
+		/* ========================
+		   Missing / invisible ring
+		   ======================== */
+		.ring-none:focus {
+			outline: none;
+		}
+
+		.ring-bg-change:focus {
+			outline: none;
+			background: #0057b8;
+			color: #ffffff;
+		}
+
+
+		/* ========================
+		   box-shadow rings
+		   ======================== */
+		.ring-shadow-high:focus {
+			outline: none;
+			/* external spread shadow acts like an outline */
+			box-shadow: 0 0 0 3px #000000;
+		}
+
+		.ring-shadow-low:focus {
+			outline: none;
+			box-shadow: 0 0 0 3px #b0b0b0;
+		}
+
+		.ring-shadow-inset:focus {
+			outline: none;
+			/* inset ring lives inside the element boundary — script samples outside */
+			box-shadow: 0 0 0 3px #000000 inset;
+		}
+
+
+		/* ========================
+		   Outline offset
+		   ======================== */
+		.ring-offset-2:focus {
+			/* ring at ~3px out, within scan range */
+			outline: 3px solid #000000;
+			outline-offset: 2px;
+		}
+
+		.ring-offset-4:focus {
+			/* ring starts at ~5px out, at the edge of the 1–4px scan */
+			outline: 3px solid #000000;
+			outline-offset: 4px;
+		}
+
+		.ring-offset-12:focus {
+			/* ring at 12px+, well beyond the 4px scan range */
+			outline: 3px solid #000000;
+			outline-offset: 12px;
+		}
+
+
+		/* ========================
+		   Non-white backgrounds
+		   ======================== */
+		.bg-dark {
+			background: #1a1a1a;
+			padding: 2em;
+			margin-bottom: 2em;
+		}
+
+		.bg-dark button {
+			background: #2d2d2d;
+			border-color: #666666;
+			color: #e0e0e0;
+		}
+
+		.bg-dark .case > p {
+			color: #aaaaaa;
+		}
+
+		.ring-white:focus {
+			/* #ffffff on #1a1a1a = ~17:1 */
+			outline: 3px solid #ffffff;
+		}
+
+		.ring-dark-on-dark:focus {
+			/* #555555 on #1a1a1a = ~2.3:1 */
+			outline: 3px solid #555555;
+		}
+
+		.bg-blue {
+			background: #1e40af;
+			padding: 2em;
+			margin-bottom: 2em;
+		}
+
+		.bg-blue button {
+			background: #1d4ed8;
+			border-color: #93c5fd;
+			color: #ffffff;
+		}
+
+		.bg-blue .case > p {
+			color: #bfdbfe;
+		}
+
+		.bg-gradient {
+			background: linear-gradient(to right, #ffffff, #000000);
+			padding: 2em;
+			margin-bottom: 2em;
+		}
+
+
+		/* ========================
+		   Size edge cases
+		   ======================== */
+		.btn-small {
+			width: 2em;
+			height: 2em;
+			padding: 0;
+		}
+
+		.btn-wide {
+			width: 100%;
+		}
+
+
+		/* ========================
+		   Element types
+		   ======================== */
+		a {
+			display: block;
+			color: #0057b8;
+		}
+
+		a:focus {
+			outline: 3px solid #000000;
+		}
+
+		input[type="text"],
+		select,
+		textarea {
+			display: block;
+			padding: 0.4em;
+			font-size: 1em;
+			border: 1px solid #555555;
+		}
+
+		input[type="text"]:focus,
+		select:focus,
+		textarea:focus {
+			outline: 3px solid #000000;
+		}
+
+		input[type="checkbox"] {
+			display: block;
+			width: 1.2em;
+			height: 1.2em;
+		}
+
+		input[type="checkbox"]:focus {
+			outline: 3px solid #000000;
+		}
+
+		.div-focusable {
+			display: block;
+			background: #e8e8e8;
+			border: 1px solid #555555;
+			padding: 0.5em 1.5em;
+			font-size: 1em;
+			cursor: pointer;
+		}
+
+		.div-focusable:focus {
+			outline: 3px solid #000000;
 		}
 	</style>
 </head>
 <body>
 	<h1>Contrast checker test</h1>
+	<p>Tab to each element and press <kbd>NVDA+Shift+C</kbd> to check its focus indicator contrast.</p>
 
-	<p class="fail">
-		This text fails the 3:1 requirement. Foreground #999999 on background #ffffff gives a contrast ratio of approximately 2.85:1.
+
+	<h2>Text contrast (press NVDA+F on focused text)</h2>
+
+	<p>
+		Move the NVDA cursor onto any of the text below and press <kbd>NVDA+F</kbd> to hear formatting information,
+		including the contrast ratio between the foreground and background colors.
+		This is a manual action, not automatic.
 	</p>
 
-	<p class="pass">
-		This text passes the 3:1 requirement. Foreground #595959 on background #ffffff gives a contrast ratio of approximately 7.0:1.
-	</p>
+	<div class="case">
+		<p>#999999 on #ffffff — ~2.85:1, fails 3:1</p>
+		<span class="text-fail">
+			This text fails the 3:1 minimum requirement. The foreground color #999999 on the background #ffffff gives a contrast ratio of approximately 2.85:1.
+		</span>
+	</div>
+
+	<div class="case">
+		<p>#595959 on #ffffff — ~7.0:1, passes AA and AAA</p>
+		<span class="text-pass">
+			This text passes both WCAG AA (4.5:1) and AAA (7:1). The foreground color #595959 on the background #ffffff gives a contrast ratio of approximately 7.0:1.
+		</span>
+	</div>
+
+
+	<h2>Controlled ring contrast (white background)</h2>
+
+	<div class="case">
+		<p>Outline #b0b0b0 — ~2.2:1, fails 3:1</p>
+		<button class="ring-fail-3">Fails 3:1</button>
+	</div>
+
+	<div class="case">
+		<p>Outline #888888 — ~3.5:1, above 3:1 but fails 4.5:1</p>
+		<button class="ring-fail-4-5">Fails 4.5:1</button>
+	</div>
+
+	<div class="case">
+		<p>Outline #000000 — 21:1, passes 7:1</p>
+		<button class="ring-pass-7">Passes 7:1</button>
+	</div>
+
+
+	<h2>Missing or invisible focus indicator</h2>
+
+	<div class="case">
+		<p>No custom CSS — browser default ring, result varies by browser/OS</p>
+		<button>Browser default</button>
+	</div>
+
+	<div class="case">
+		<p>outline:none, no replacement — antipattern, script should find no ring</p>
+		<button class="ring-none">No focus ring at all</button>
+	</div>
+
+	<div class="case">
+		<p>Focus only changes background color — no external ring to detect</p>
+		<button class="ring-bg-change">Background changes on focus</button>
+	</div>
+
+
+	<h2>box-shadow as focus ring</h2>
+
+	<div class="case">
+		<p>box-shadow 0 0 0 3px #000 — external spread, same visual as outline, expected ~21:1</p>
+		<button class="ring-shadow-high">Shadow ring, high contrast</button>
+	</div>
+
+	<div class="case">
+		<p>box-shadow 0 0 0 3px #b0b0b0 — external spread, expected ~2.2:1</p>
+		<button class="ring-shadow-low">Shadow ring, low contrast</button>
+	</div>
+
+	<div class="case">
+		<p>box-shadow inset — ring is inside the element, script samples outside, won't detect</p>
+		<button class="ring-shadow-inset">Inset shadow ring</button>
+	</div>
+
+
+	<h2>Outline offset</h2>
+
+	<div class="case">
+		<p>outline-offset 2px — ring at ~3px out, within the 1–4px scan range</p>
+		<button class="ring-offset-2">Offset 2px</button>
+	</div>
+
+	<div class="case">
+		<p>outline-offset 4px — ring starts at ~5px, at the edge of scan range</p>
+		<button class="ring-offset-4">Offset 4px</button>
+	</div>
+
+	<div class="case">
+		<p>outline-offset 12px — ring at 12px+, beyond the 4px scan range entirely</p>
+		<button class="ring-offset-12">Offset 12px</button>
+	</div>
+
+
+	<h2>Non-white backgrounds</h2>
+
+	<div class="bg-dark">
+		<div class="case">
+			<p>White ring on dark bg (#1a1a1a) — expected ~17:1</p>
+			<button class="ring-white">White ring, dark background</button>
+		</div>
+
+		<div class="case">
+			<p>Ring #555555 on dark bg (#1a1a1a) — expected ~2.3:1, fails 3:1</p>
+			<button class="ring-dark-on-dark">Low contrast on dark background</button>
+		</div>
+	</div>
+
+	<div class="bg-blue">
+		<div class="case">
+			<p>White ring on blue bg (#1e40af) — expected high contrast</p>
+			<button class="ring-white">White ring, blue background</button>
+		</div>
+	</div>
+
+	<div class="bg-gradient">
+		<div class="case">
+			<p>Black ring on gradient bg — result depends on position along gradient</p>
+			<button class="ring-pass-7">Black ring, gradient background</button>
+		</div>
+	</div>
+
+
+	<h2>Element types</h2>
+
+	<div class="case">
+		<p>Link</p>
+		<a href="#">A link element</a>
+	</div>
+
+	<div class="case">
+		<p>Text input</p>
+		<input type="text" placeholder="Text input" />
+	</div>
+
+	<div class="case">
+		<p>Checkbox</p>
+		<input type="checkbox" />
+	</div>
+
+	<div class="case">
+		<p>Select</p>
+		<select>
+			<option>Option 1</option>
+			<option>Option 2</option>
+		</select>
+	</div>
+
+	<div class="case">
+		<p>Textarea</p>
+		<textarea rows="2" cols="30"></textarea>
+	</div>
+
+	<div class="case">
+		<p>div with tabindex="0"</p>
+		<div class="div-focusable" tabindex="0">Custom focusable div</div>
+	</div>
+
+
+	<h2>Size edge cases</h2>
+
+	<div class="case">
+		<p>Very small element (32x32px icon button)</p>
+		<button class="ring-pass-7 btn-small" aria-label="small button"></button>
+	</div>
+
+	<div class="case">
+		<p>Full-width element</p>
+		<button class="ring-pass-7 btn-wide">Full-width button</button>
+	</div>
 </body>
 </html>
