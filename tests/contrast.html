@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contrast checker test</title>
+	<style>
+		body {
+			font-family: sans-serif;
+			background: #ffffff;
+			padding: 2em;
+		}
+
+		p {
+			font-size: 1.1em;
+			padding: 0.5em;
+			margin-bottom: 1em;
+		}
+
+		.fail {
+			/* #999999 on #ffffff = 2.85:1, fails 3:1 */
+			color: #999999;
+			background-color: #ffffff;
+		}
+
+		.pass {
+			/* #595959 on #ffffff = 7.0:1, passes 3:1 and WCAG AA */
+			color: #595959;
+			background-color: #ffffff;
+		}
+	</style>
+</head>
+<body>
+	<h1>Contrast checker test</h1>
+
+	<p class="fail">
+		This text fails the 3:1 requirement. Foreground #999999 on background #ffffff gives a contrast ratio of approximately 2.85:1.
+	</p>
+
+	<p class="pass">
+		This text passes the 3:1 requirement. Foreground #595959 on background #ffffff gives a contrast ratio of approximately 7.0:1.
+	</p>
+</body>
+</html>

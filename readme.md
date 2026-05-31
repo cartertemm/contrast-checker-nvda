@@ -32,6 +32,10 @@ In either case, you will be presented with NVDAs typical formatting information,
 - align left
 - #000000 on #FFFFFF, contrast 21.0:1
 
+## Try it out
+
+Open [tests/contrast.html](tests/contrast.html) in a browser with NVDA running. It contains two paragraphs, one that fails 3:1 and one that passes. Navigate to either and press NVDA+f to hear the contrast reported.
+
 ## Building from source
 
 Requires Git, Python, and SCons.

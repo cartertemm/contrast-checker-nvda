@@ -2,6 +2,7 @@ addon/doc/*.css
 addon/doc/en/
 *_docHandler.py
 *.html
+!tests/*.html
 manifest.ini
 *.mo
 *.pot
