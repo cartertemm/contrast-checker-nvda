@@ -24,10 +24,13 @@ addon_info = AddonInfo(
 	addon_description=_("""Add-on that presents the color contrast of the system carrot, navigator object, and all elements on the page.
 Primarily useful for helping blind digital accessibility testers determine whether visible text and controls meet threshholds set out by the Web Content Accessibility Guidelines (WCAG)."""),
 	# version
-	addon_version="0.1",
+	addon_version="0.2",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog=_("""New in version 0.1:
+	addon_changelog=_("""New in version 0.2:
+It is now possible to inspect the contrast of focus indicators using NVDA+shift+c. This works by capturing a screen region around the focused element using a `BitBlt` call, then sampling pixels along the element's perimeter at 8px out for the background reference and 1-4px out for the highest-contrast transition.
+Added a document with test scenarios (tests/contrast.html) that can be used to measure what this add-on supports and where it currently falls short. More info on this to come.
+New in version 0.1:
 Initial version. Please consult this add-ons documentation to learn how it works."""),
 	# Author(s)
 	addon_author="Carter Temm <cartertemm@gmail.com>",
