@@ -27,7 +27,10 @@ Primarily useful for helping blind digital accessibility testers determine wheth
 	addon_version="0.3",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog=_("""New in version 0.2:
+	addon_changelog=_("""New in version 0.3:
+Initial public release, which is to say that I have fixed all of the bugs that I currently know about.
+Rendered the [test page on my site](https://ctemm.me/files/test_contrast.html) so it can be accessed without the need to clone the repo.
+New in version 0.2:
 It is now possible to inspect the contrast of focus indicators using NVDA+shift+c. This works by capturing a screen region around the focused element using a `BitBlt` call, then sampling pixels along the element's perimeter at 8px out for the background reference and 1-4px out for the highest-contrast transition.
 Added a document with test scenarios (tests/contrast.html) that can be used to measure what this add-on supports and where it currently falls short. More info on this to come.
 New in version 0.1:
