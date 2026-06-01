@@ -11,6 +11,9 @@ import globalPluginHandler
 import speech
 import ui
 import colors
+import html
+import config
+import textInfos
 
 try:
 	addonHandler.initTranslation()
@@ -20,6 +23,7 @@ except addonHandler.AddonError:
 
 _orig = None
 _ScreenCapture = namedtuple("_ScreenCapture", ("buf", "left", "top", "width", "height"))
+_ContrastEntry = namedtuple("_ContrastEntry", ("text", "fg", "bg", "ratio"))
 
 
 class _BITMAPINFOHEADER(ctypes.Structure):
@@ -138,6 +142,99 @@ def _dominant_color(pixels):
 	return colors.RGB(r, g, b)
 
 
+def _collect_from_text_info(info):
+	format_config = {k: False for k in config.conf["documentFormatting"]}
+	format_config["reportColor"] = True
+	format_config["detectFormatAfterCursor"] = True
+	fg = None
+	bg = None
+	results = []
+	for item in info.getTextWithFields(format_config):
+		if isinstance(item, textInfos.FieldCommand) and item.command == "formatChange":
+			attrs = item.field
+			c = attrs.get("color")
+			bc = attrs.get("background-color")
+			if isinstance(c, colors.RGB):
+				fg = c
+			if isinstance(bc, colors.RGB):
+				bg = bc
+		elif isinstance(item, str) and item.strip() and fg is not None and bg is not None:
+			results.append((item, fg, bg))
+	return results
+
+
+def _collect_from_obj_tree(obj, depth=0):
+	if depth >= 50:
+		return []
+	try:
+		info = obj.makeTextInfo(textInfos.POSITION_ALL)
+		results = _collect_from_text_info(info)
+		if results:
+			return results
+	except Exception:
+		pass
+	results = []
+	try:
+		children = obj.children
+	except Exception:
+		return results
+	for child in children:
+		results.extend(_collect_from_obj_tree(child, depth + 1))
+	return results
+
+
+def _collect_contrast_data(obj):
+	try:
+		info = obj.treeInterceptor.makeTextInfo(textInfos.POSITION_ALL)
+		results = _collect_from_text_info(info)
+		if results:
+			return results
+	except Exception:
+		pass
+	try:
+		info = obj.makeTextInfo(textInfos.POSITION_ALL)
+		results = _collect_from_text_info(info)
+		if results:
+			return results
+	except Exception:
+		pass
+	return _collect_from_obj_tree(obj)
+
+
+def _bucket_results(entries):
+	seen = set()
+	deduped = []
+	for e in entries:
+		key = (e.text[:255], e.fg, e.bg)
+		if key not in seen:
+			seen.add(key)
+			deduped.append(e)
+	# Entries at or above 7:1 pass all WCAG thresholds and are excluded from output.
+	below_3 = [e for e in deduped if e.ratio < 3.0]
+	below_4_5 = [e for e in deduped if 3.0 <= e.ratio < 4.5]
+	below_7 = [e for e in deduped if 4.5 <= e.ratio < 7.0]
+	return below_3, below_4_5, below_7
+
+
+def _build_audit_html(below_3, below_4_5, below_7):
+	parts = []
+	for heading, bucket in (
+		(_("Below 3:1"), below_3),
+		(_("Below 4.5:1"), below_4_5),
+		(_("Below 7:1"), below_7),
+	):
+		if not bucket:
+			continue
+		parts.append(f"<h1>{html.escape(heading)}</h1><ul>")
+		for e in bucket:
+			text = html.escape(e.text[:255])
+			parts.append(f"<li>{text}: {_hex(e.fg)} on {_hex(e.bg)}, {e.ratio:.1f}:1</li>")
+		parts.append("</ul>")
+	if not parts:
+		return f"<p>{html.escape(_('No contrast failures found'))}</p>"
+	return "".join(parts)
+
+
 # Overly complex function, this signature is likely to change in later versions of NVDA
 def _patched_getFormatFieldSpeech(attrs, attrsCache=None, formatConfig=None, **kwargs):
 	sequence = _orig(attrs, attrsCache=attrsCache, formatConfig=formatConfig, **kwargs)
@@ -225,6 +322,31 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	# Translators: Description of the script that checks focus indicator contrast, shown in the Input Gestures dialog
 	script_checkFocusIndicator.__doc__ = _("Report the contrast of the focus indicator for the focused element")
 
+	def script_pageContrastAudit(self, gesture):
+		obj = api.getFocusObject()
+		if obj is None:
+			# Translators: Spoken when no element has keyboard focus
+			ui.message(_("No focused element"))
+			return
+		raw = _collect_contrast_data(obj)
+		if not raw:
+			ui.message(_("No text with color information found"))
+			return
+		entries = [
+			_ContrastEntry(text=text, fg=fg, bg=bg, ratio=_contrast_ratio(fg, bg))
+			for text, fg, bg in raw
+		]
+		below_3, below_4_5, below_7 = _bucket_results(entries)
+		if not below_3 and not below_4_5 and not below_7:
+			ui.message(_("No contrast failures found"))
+			return
+		html_content = _build_audit_html(below_3, below_4_5, below_7)
+		ui.browseableMessage(html_content, _("Page contrast audit"), isHtml=True)
+
+	# Translators: Description of the script that scans the page for contrast failures, shown in the Input Gestures dialog
+	script_pageContrastAudit.__doc__ = _("Scan the current document for color contrast failures")
+
 	__gestures = {
 		"kb:NVDA+shift+c": "checkFocusIndicator",
+		"kb:NVDA+shift+control+f": "pageContrastAudit",
 	}
