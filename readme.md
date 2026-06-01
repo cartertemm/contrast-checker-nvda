@@ -1,12 +1,19 @@
 # Color Contrast Checker for NVDA
 
-Digital accessibility testers routinely need to ensure that color contrast ratios fall within thresholds defined by the Web Content Accessibility Guidelines (WCAG). However, it has historically been difficult for blind testers to do this without relying on sighted colleagues or automated solutions that are not always reliable.
+Digital accessibility testers routinely need to ensure that color contrast ratios fall within thresholds defined by the Web Content Accessibility Guidelines (WCAG). However, it has historically been difficult for blind testers to do this without relying on sighted colleagues or automated solutions. Most automated solutions in-market, including WAVE and axe DevTools, only filter contrast issues as "suggestions", miss things, and do not examine the focus indicator.
 
-This add-on lets you check the contrast of the focused item with NVDA+F, the item under the review cursor with NVDA+shift+f, and the focus indicator with NVDA+Shift+C.
+This add-on lets you check the contrast of the focused item with NVDA+F, the item under the review cursor with NVDA+Shift+F, the focus indicator with NVDA+Shift+C, and run a page-wide audit of all text contrast failures with NVDA+Shift+Ctrl+F.
+
+| Task | Command | Scope |
+| --- | --- | --- |
+| Check focused text contrast | **NVDA+F** | Formatting information for the focused item, including contrast ratio |
+| Check review cursor text contrast | **NVDA+Shift+F** | Formatting information at the review cursor position, including contrast ratio |
+| Check focus indicator contrast | **NVDA+Shift+C** | Focus ring against the surrounding background |
+| Run a page-wide text audit | **NVDA+Shift+Ctrl+F** | Visible text on the current page, grouped by WCAG contrast threshold |
 
 ## Text contrast
 
-Press **NVDA+F** on any text to hear formatting information including the contrast ratio. Example:
+This add-on extends NVDA's existing format information commands. Press **NVDA+F** on any text to hear formatting information including the contrast ratio. Example:
 
 - Source Sans 3 ExtraLight
 - 10.5pt
@@ -24,7 +31,19 @@ Press **NVDA+Shift+C** on any focused element to hear the contrast between its f
 
 > Focus indicator: #000000 on #FFFFFF, contrast 21.0:1
 
-WCAG requires 3:1 for focus indicators.
+WCAG evaluates focus indicators through related requirements. Non-text contrast requires the visual focus indicator to have at least 3:1 contrast against adjacent colors, and WCAG 2.2 focus appearance adds requirements around the contrast of the change and the indicator's size. This add-on reports the contrast measurement; testers should still evaluate the full focus appearance requirement.
+
+## Page-wide contrast audit
+
+Press **NVDA+Shift+Ctrl+F** to scan every piece of text on the current page at once. Results open in a browsable dialog, grouped by severity:
+
+- Below 3:1 (large text)
+- Below 4.5:1 (normal or small text)
+- Below 7:1 (AAA text contrast)
+
+Text that meets 7:1 or better passes all WCAG thresholds and is omitted. If nothing fails, NVDA says so instead of opening the dialog.
+
+Please note that this command only checks text that is visible in the current page state. You still need to reveal and test other states such as focus, hover, expanded or collapsed content, lazy-loaded content, and custom-rendered or image-based text. Focus-ring contrast is checked separately with **NVDA+Shift+C**.
 
 ## Installation
 
