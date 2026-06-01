@@ -219,9 +219,9 @@ def _bucket_results(entries):
 def _build_audit_html(below_3, below_4_5, below_7):
 	parts = []
 	for heading, bucket in (
-		(_("Below 3:1"), below_3),
-		(_("Below 4.5:1"), below_4_5),
-		(_("Below 7:1"), below_7),
+		(_("Below 3:1 (large text or UI components)"), below_3),
+		(_("Below 4.5:1 (normal or small text)"), below_4_5),
+		(_("Below 7:1 (AAA level)"), below_7),
 	):
 		if not bucket:
 			continue
