@@ -19,7 +19,7 @@ This add-on extends NVDA's existing format information commands. Press **NVDA+F*
 - 10.5pt
 - black on white
 - align left
-- #000000 on #FFFFFF, contrast 21.0:1
+- `#000000 on #FFFFFF, contrast 21.0:1`
 
 Press it twice quickly for a browsable dialog. **NVDA+Shift+F** uses the review cursor position instead of the system caret.
 
@@ -29,7 +29,7 @@ WCAG AA requires 4.5:1 for normal text, 3:1 for large text. WCAG AAA requires 7:
 
 Press **NVDA+Shift+C** on any focused element to hear the contrast between its focus ring and the surrounding background:
 
-> Focus indicator: #000000 on #FFFFFF, contrast 21.0:1
+> `Focus indicator: #000000 on #FFFFFF, contrast 21.0:1`
 
 WCAG evaluates focus indicators through related requirements. Non-text contrast requires the visual focus indicator to have at least 3:1 contrast against adjacent colors, and WCAG 2.2 focus appearance adds requirements around the contrast of the change and the indicator's size. This add-on reports the contrast measurement; testers should still evaluate the full focus appearance requirement.
 
