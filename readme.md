@@ -47,8 +47,8 @@ Please note that this command only checks text that is visible in the current pa
 
 ## Installation
 
-1. Download the `.nvda-addon` file from the releases page.
-2. Open it with NVDA running. NVDA will prompt you to install.
+1. Download the latest release from [this link](https://github.com/cartertemm/contrast-checker-nvda/releases/latest/).
+2. Open the .nvda-addon file with NVDA running. NVDA will prompt you to install.
 
 ## Try it out
 
