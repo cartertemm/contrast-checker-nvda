@@ -52,7 +52,7 @@ Please note that this command only checks text that is visible in the current pa
 
 ## Try it out
 
-Open [tests/contrast.html](tests/contrast.html) in a browser with NVDA running.
+Open `tests/test_contrast.html` locally, or [the rendered test page](https://ctemm.me/files/test_contrast.html) in a browser with NVDA running.
 It covers various common scenarios like text contrast, focus rings at known ratios, missing rings, box-shadow rings, non-white backgrounds, and different element types.
 
 ## Building from source
