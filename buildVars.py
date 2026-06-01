@@ -24,7 +24,7 @@ addon_info = AddonInfo(
 	addon_description=_("""Add-on that presents the color contrast of the system carrot, navigator object, and all elements on the page.
 Primarily useful for helping blind digital accessibility testers determine whether visible text and controls meet threshholds set out by the Web Content Accessibility Guidelines (WCAG)."""),
 	# version
-	addon_version="0.2",
+	addon_version="0.3",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
 	addon_changelog=_("""New in version 0.2:
