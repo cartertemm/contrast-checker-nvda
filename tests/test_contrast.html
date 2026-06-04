@@ -51,6 +51,11 @@
 			color: #595959;
 		}
 
+		.text-aaa-boundary {
+			/* #4f5b61 on #ffffff = 7.0:1, boundary case for AAA */
+			color: #4f5b61;
+		}
+
 
 		/* ========================
 		   Controlled ring contrast, white background
@@ -269,6 +274,13 @@
 		<p>#595959 on #ffffff — ~7.0:1, passes AA and AAA</p>
 		<span class="text-pass">
 			This text passes both WCAG AA (4.5:1) and AAA (7:1). The foreground color #595959 on the background #ffffff gives a contrast ratio of approximately 7.0:1.
+		</span>
+	</div>
+
+	<div class="case">
+		<p>#4f5b61 on #ffffff — 7.0:1, AAA boundary (Austin, Texas sign color)</p>
+		<span class="text-aaa-boundary">
+			Austin, Texas uses this color on white backgrounds. The ratio rounds to exactly 7.0:1, right at the AAA threshold. It should pass, it should not appear as a failure.
 		</span>
 	</div>
 
