@@ -210,9 +210,9 @@ def _bucket_results(entries):
 			seen.add(key)
 			deduped.append(e)
 	# Entries at or above 7:1 pass all WCAG thresholds and are excluded from output.
-	below_3 = [e for e in deduped if e.ratio < 3.0]
-	below_4_5 = [e for e in deduped if 3.0 <= e.ratio < 4.5]
-	below_7 = [e for e in deduped if 4.5 <= e.ratio < 7.0]
+	below_3 = [e for e in deduped if round(e.ratio, 1) < 3.0]
+	below_4_5 = [e for e in deduped if 3.0 <= round(e.ratio, 1) < 4.5]
+	below_7 = [e for e in deduped if 4.5 <= round(e.ratio, 1) < 7.0]
 	return below_3, below_4_5, below_7
 
 
