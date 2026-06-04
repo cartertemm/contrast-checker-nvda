@@ -24,10 +24,12 @@ addon_info = AddonInfo(
 	addon_description=_("""Add-on that presents the color contrast of the system carrot, navigator object, and all elements on the page.
 Primarily useful for helping blind digital accessibility testers determine whether visible text and controls meet threshholds set out by the Web Content Accessibility Guidelines (WCAG)."""),
 	# version
-	addon_version="0.3",
+	addon_version="0.4",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog=_("""New in version 0.3:
+	addon_changelog=_("""New in version 0.4:
+Fixed a rounding error where contrast values were being counted as failures when they passed exactly, i.e. #4f5b61 on #ffffff passes exactly at 7:1
+New in version 0.3:
 Initial public release, which is to say that I have fixed all of the bugs that I currently know about.
 Rendered the [test page on my site](https://ctemm.me/files/test_contrast.html) so it can be accessed without the need to clone the repo.
 New in version 0.2:
