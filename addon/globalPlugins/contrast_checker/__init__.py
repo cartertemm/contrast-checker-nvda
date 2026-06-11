@@ -8,6 +8,7 @@ log = logging.getLogger(__name__)
 import addonHandler
 import api
 import globalPluginHandler
+import scriptHandler
 import speech
 import ui
 import colors
@@ -311,16 +312,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				best_ratio = r
 				best_color = color
 		# Translators: Reports the focus indicator color, surrounding background color, and contrast ratio. {indicator} and {bg} are hex color codes, {ratio} is a number like 4.5
-		ui.message(
-			_("Focus indicator: {indicator} on {bg}, contrast {ratio}:1").format(
-				indicator=_hex(best_color),
-				bg=_hex(bg),
-				ratio=f"{best_ratio:.1f}",
-			)
+		message = _("Focus indicator: {indicator} on {bg}, contrast {ratio}:1").format(
+			indicator=_hex(best_color),
+			bg=_hex(bg),
+			ratio=f"{best_ratio:.1f}",
 		)
+		if scriptHandler.getLastScriptRepeatCount() == 0:
+			ui.message(message)
+		else:
+			# Translators: Title of the browse mode dialog showing the focus indicator contrast
+			ui.browseableMessage(message, _("Focus indicator contrast"))
 
 	# Translators: Description of the script that checks focus indicator contrast, shown in the Input Gestures dialog
-	script_checkFocusIndicator.__doc__ = _("Report the contrast of the focus indicator for the focused element")
+	script_checkFocusIndicator.__doc__ = _("Report the contrast of the focus indicator for the focused element. If pressed twice, presents the information in browse mode")
 
 	def script_pageContrastAudit(self, gesture):
 		obj = api.getFocusObject()
