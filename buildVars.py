@@ -24,10 +24,13 @@ addon_info = AddonInfo(
 	addon_description=_("""Add-on that presents the color contrast of the system carrot, navigator object, and all elements on the page.
 Primarily useful for helping blind digital accessibility testers determine whether visible text and controls meet threshholds set out by the Web Content Accessibility Guidelines (WCAG)."""),
 	# version
-	addon_version="0.4",
+	addon_version="2026.06.12",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog=_("""New in version 0.4:
+	addon_changelog=_("""New in version 2026.06.12:
+Made it possible to press NVDA+shift+C twice quickly to present the contrast of the focus indicator in browse mode.
+Switch to calendar versioning, i.e. yyyy.mm.dd to maintain consistency with my other add-ons.
+New in version 0.4:
 Fixed a rounding error where contrast values were being counted as failures when they passed exactly, i.e. #4f5b61 on #ffffff passes exactly at 7:1
 New in version 0.3:
 Initial public release, which is to say that I have fixed all of the bugs that I currently know about.
@@ -48,7 +51,7 @@ Initial version. Please consult this add-ons documentation to learn how it works
 	# Minimum NVDA version supported (e.g. "2019.3.0", minor version is optional)
 	addon_minimumNVDAVersion=None,
 	# Last NVDA version supported/tested (e.g. "2024.4.0", ideally more recent than minimum version)
-	addon_lastTestedNVDAVersion="2026.2",
+	addon_lastTestedNVDAVersion="2026.1.1",
 	# Add-on update channel (default is None, denoting stable releases,
 	# and for development releases, use "dev".)
 	# Do not change unless you know what you are doing!
