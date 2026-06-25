@@ -1,0 +1,183 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the
+# contrast-checker-nvda package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: contrast-checker-nvda 2026.06.12\n"
+"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
+"POT-Creation-Date: 2026-06-25 14:34-0700\n"
+"PO-Revision-Date: 2026-06-25 21:35+0000\n"
+"Last-Translator: Carter Temm <cartertemm@gmail.com>\n"
+"Language-Team: pl <LL@li.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Translators: Heading in the contrast audit report for elements below the
+#. 3:1
+#. ratio
+#: addon/globalPlugins/contrast_checker/__init__.py:224
+msgid "Below 3:1 (large text or UI components)"
+msgstr "Poniżej 3:1 (duży tekst lub elementy interfejsu)"
+
+#. Translators: Heading in the contrast audit report for elements below the
+#. 4.5:1 ratio
+#: addon/globalPlugins/contrast_checker/__init__.py:226
+msgid "Below 4.5:1 (normal or small text)"
+msgstr "Poniżej 4.5:1 (zwykły lub mały tekst)"
+
+#. Translators: Heading in the contrast audit report for elements below the
+#. 7:1
+#. (AAA) ratio
+#: addon/globalPlugins/contrast_checker/__init__.py:228
+msgid "Below 7:1 (AAA level)"
+msgstr "Poniżej 7:1 (poziom AAA)"
+
+#. Translators: Spoken message reporting the foreground color, background
+#. color, and their contrast ratio. {fg} and {bg} are hex color codes, {ratio}
+#. is a number like 4.5
+#: addon/globalPlugins/contrast_checker/__init__.py:256
+#, python-brace-format, fuzzy
+msgid "{fg} on {bg}, contrast {ratio}:1"
+msgstr "{fg} na {bg}, kontrast {ratio}:1"
+
+#. Translators: Category for this add-on's scripts shown in the Input Gestures
+#. dialog
+#: addon/globalPlugins/contrast_checker/__init__.py:261
+msgid "Contrast Checker"
+msgstr "Sprawdzanie kontrastu"
+
+#. Translators: Spoken when no element has keyboard focus
+#: addon/globalPlugins/contrast_checker/__init__.py:277
+#: addon/globalPlugins/contrast_checker/__init__.py:338
+msgid "No focused element"
+msgstr "Brak elementu z fokusem"
+
+#. Translators: Spoken when the focused element has no reported screen
+#. location
+#: addon/globalPlugins/contrast_checker/__init__.py:282
+msgid "Focused element has no screen location"
+msgstr "Element z fokusem nie ma położenia na ekranie"
+
+#. Translators: Spoken when the focused element has zero size
+#: addon/globalPlugins/contrast_checker/__init__.py:290
+msgid "Focused element has no visible area"
+msgstr "Element z fokusem nie ma widocznego obszaru"
+
+#. Translators: Spoken when screen capture fails
+#: addon/globalPlugins/contrast_checker/__init__.py:298
+msgid "Could not capture screen region"
+msgstr "Nie można przechwycić obszaru ekranu"
+
+#. Translators: Spoken when no pixels could be sampled (e.g. element is at the
+#. screen edge)
+#: addon/globalPlugins/contrast_checker/__init__.py:305
+msgid "Could not sample screen colors"
+msgstr "Nie można pobrać próbek kolorów ekranu"
+
+#. Translators: Reports the focus indicator color, surrounding background
+#. color, and contrast ratio. {indicator} and {bg} are hex color codes,
+#. {ratio}
+#. is a number like 4.5
+#: addon/globalPlugins/contrast_checker/__init__.py:320
+#, python-brace-format, fuzzy
+msgid "Focus indicator: {indicator} on {bg}, contrast {ratio}:1"
+msgstr "Wskaźnik fokusu: {indicator} na {bg}, kontrast {ratio}:1"
+
+#. Translators: Title of the browse mode dialog showing the focus indicator
+#. contrast
+#: addon/globalPlugins/contrast_checker/__init__.py:329
+msgid "Focus indicator contrast"
+msgstr "Kontrast wskaźnika fokusu"
+
+#. Translators: Description of the script that checks focus indicator
+#. contrast,
+#. shown in the Input Gestures dialog
+#: addon/globalPlugins/contrast_checker/__init__.py:332
+msgid ""
+"Report the contrast of the focus indicator for the focused element. If "
+"pressed twice, presents the information in browse mode"
+msgstr ""
+"Podaje kontrast wskaźnika fokusu dla elementu z fokusem. Po dwukrotnym "
+"naciśnięciu prezentuje informacje w trybie przeglądania"
+
+#. Translators: Spoken when the document has no text with color information to
+#. audit
+#: addon/globalPlugins/contrast_checker/__init__.py:343
+msgid "No text with color information found"
+msgstr "Nie znaleziono tekstu z informacjami o kolorze"
+
+#. Translators: Spoken when the contrast audit finds no failures
+#: addon/globalPlugins/contrast_checker/__init__.py:352
+msgid "No contrast failures found"
+msgstr "Nie znaleziono błędów kontrastu"
+
+#. Translators: Title of the browse mode dialog showing the page contrast
+#. audit
+#. results
+#: addon/globalPlugins/contrast_checker/__init__.py:356
+msgid "Page contrast audit"
+msgstr "Audyt kontrastu strony"
+
+#. Translators: Description of the script that scans the page for contrast
+#. failures, shown in the Input Gestures dialog
+#: addon/globalPlugins/contrast_checker/__init__.py:359
+msgid "Scan the current document for color contrast failures"
+msgstr "Skanuje bieżący dokument w poszukiwaniu błędów kontrastu kolorów"
+
+#. Add-on summary/title, usually the user visible name of the add-on
+#. Translators: Summary/title for this add-on
+#. to be shown on installation and add-on information found in add-on store
+#: buildVars.py:21
+msgid "Color Contrast Checker for NVDA"
+msgstr "Sprawdzanie kontrastu kolorów dla NVDA"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on
+#. information from add-on store
+#: buildVars.py:24
+msgid ""
+"Add-on that presents the color contrast of the system carrot, navigator object, and all elements on the page.\n"
+"Primarily useful for helping blind digital accessibility testers determine whether visible text and controls meet threshholds set out by the Web Content Accessibility Guidelines (WCAG)."
+msgstr ""
+"Dodatek prezentujący kontrast kolorów karetki systemowej, obiektu nawigatora oraz wszystkich elementów na stronie.\n"
+"Przydatny przede wszystkim do pomagania niewidomym testerom dostępności cyfrowej w ustaleniu, czy widoczny tekst i kontrolki spełniają progi określone w Wytycznych dotyczących dostępności treści internetowych (WCAG)."
+
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the
+#. add-on store
+#: buildVars.py:30
+msgid ""
+"New in version 2026.06.12:\n"
+"Made it possible to press NVDA+shift+C twice quickly to present the contrast of the focus indicator in browse mode.\n"
+"Switch to calendar versioning, i.e. yyyy.mm.dd to maintain consistency with my other add-ons.\n"
+"New in version 0.4:\n"
+"Fixed a rounding error where contrast values were being counted as failures when they passed exactly, i.e. #4f5b61 on #ffffff passes exactly at 7:1\n"
+"New in version 0.3:\n"
+"Initial public release, which is to say that I have fixed all of the bugs that I currently know about.\n"
+"Rendered the [test page on my site](https://ctemm.me/files/test_contrast.html) so it can be accessed without the need to clone the repo.\n"
+"New in version 0.2:\n"
+"It is now possible to inspect the contrast of focus indicators using NVDA+shift+c. This works by capturing a screen region around the focused element using a `BitBlt` call, then sampling pixels along the element's perimeter at 8px out for the background reference and 1-4px out for the highest-contrast transition.\n"
+"Added a document with test scenarios (tests/contrast.html) that can be used to measure what this add-on supports and where it currently falls short. More info on this to come.\n"
+"New in version 0.1:\n"
+"Initial version. Please consult this add-ons documentation to learn how it works."
+msgstr ""
+"Nowości w wersji 2026.06.12:\n"
+"Umożliwiono szybkie dwukrotne naciśnięcie NVDA+shift+C, aby zaprezentować kontrast wskaźnika fokusu w trybie przeglądania.\n"
+"Przejście na numerację wersji według kalendarza, czyli rrrr.mm.dd, aby zachować spójność z moimi innymi dodatkami.\n"
+"Nowości w wersji 0.4:\n"
+"Naprawiono błąd zaokrąglania, przez który wartości kontrastu były liczone jako błędy, gdy spełniały próg dokładnie, np. #4f5b61 na #ffffff przechodzi dokładnie przy 7:1\n"
+"Nowości w wersji 0.3:\n"
+"Pierwsze publiczne wydanie, czyli naprawiłem wszystkie błędy, o których obecnie wiem.\n"
+"Opublikowano [stronę testową w moim serwisie](https://ctemm.me/files/test_contrast.html), aby można było z niej korzystać bez klonowania repozytorium.\n"
+"Nowości w wersji 0.2:\n"
+"Teraz można sprawdzać kontrast wskaźników fokusu za pomocą NVDA+shift+c. Działa to poprzez przechwycenie obszaru ekranu wokół elementu z fokusem za pomocą wywołania `BitBlt`, a następnie pobranie próbek pikseli wzdłuż obwodu elementu w odległości 8px dla odniesienia tła oraz od 1 do 4px dla przejścia o najwyższym kontraście.\n"
+"Dodano dokument ze scenariuszami testowymi (tests/contrast.html), który pozwala zmierzyć, co ten dodatek obsługuje, a gdzie obecnie zawodzi. Więcej informacji na ten temat wkrótce.\n"
+"Nowości w wersji 0.1:\n"
+"Pierwsza wersja. Zapoznaj się z dokumentacją tego dodatku, aby dowiedzieć się, jak działa."
