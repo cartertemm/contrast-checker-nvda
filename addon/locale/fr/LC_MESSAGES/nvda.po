@@ -23,14 +23,12 @@ msgstr ""
 #. 3:1
 #. ratio
 #: addon/globalPlugins/contrast_checker/__init__.py:224
-#, fuzzy
 msgid "Below 3:1 (large text or UI components)"
 msgstr "Inférieur à 3:1 (texte large ou composants d'interface)"
 
 #. Translators: Heading in the contrast audit report for elements below the
 #. 4.5:1 ratio
 #: addon/globalPlugins/contrast_checker/__init__.py:226
-#, fuzzy
 msgid "Below 4.5:1 (normal or small text)"
 msgstr "Inférieur à 4.5:1 (texte normal ou petit)"
 
@@ -38,7 +36,6 @@ msgstr "Inférieur à 4.5:1 (texte normal ou petit)"
 #. 7:1
 #. (AAA) ratio
 #: addon/globalPlugins/contrast_checker/__init__.py:228
-#, fuzzy
 msgid "Below 7:1 (AAA level)"
 msgstr "Inférieur à 7:1 (niveau AAA)"
 
@@ -53,40 +50,34 @@ msgstr "{fg} sur {bg}, contraste {ratio}:1"
 #. Translators: Category for this add-on's scripts shown in the Input Gestures
 #. dialog
 #: addon/globalPlugins/contrast_checker/__init__.py:261
-#, fuzzy
 msgid "Contrast Checker"
 msgstr "Vérificateur de contraste"
 
 #. Translators: Spoken when no element has keyboard focus
 #: addon/globalPlugins/contrast_checker/__init__.py:277
 #: addon/globalPlugins/contrast_checker/__init__.py:338
-#, fuzzy
 msgid "No focused element"
 msgstr "Aucun élément ne possède le focus"
 
 #. Translators: Spoken when the focused element has no reported screen
 #. location
 #: addon/globalPlugins/contrast_checker/__init__.py:282
-#, fuzzy
 msgid "Focused element has no screen location"
 msgstr "L'élément qui possède le focus n'a aucun emplacement à l'écran"
 
 #. Translators: Spoken when the focused element has zero size
 #: addon/globalPlugins/contrast_checker/__init__.py:290
-#, fuzzy
 msgid "Focused element has no visible area"
 msgstr "L'élément qui possède le focus n'a aucune zone visible"
 
 #. Translators: Spoken when screen capture fails
 #: addon/globalPlugins/contrast_checker/__init__.py:298
-#, fuzzy
 msgid "Could not capture screen region"
 msgstr "Impossible de capturer la région de l'écran"
 
 #. Translators: Spoken when no pixels could be sampled (e.g. element is at the
 #. screen edge)
 #: addon/globalPlugins/contrast_checker/__init__.py:305
-#, fuzzy
 msgid "Could not sample screen colors"
 msgstr "Impossible d'échantillonner les couleurs de l'écran"
 
@@ -102,7 +93,6 @@ msgstr "Indicateur de focus : {indicator} sur {bg}, contraste {ratio}:1"
 #. Translators: Title of the browse mode dialog showing the focus indicator
 #. contrast
 #: addon/globalPlugins/contrast_checker/__init__.py:329
-#, fuzzy
 msgid "Focus indicator contrast"
 msgstr "Contraste de l'indicateur de focus"
 
@@ -110,7 +100,6 @@ msgstr "Contraste de l'indicateur de focus"
 #. contrast,
 #. shown in the Input Gestures dialog
 #: addon/globalPlugins/contrast_checker/__init__.py:332
-#, fuzzy
 msgid ""
 "Report the contrast of the focus indicator for the focused element. If "
 "pressed twice, presents the information in browse mode"
@@ -121,13 +110,11 @@ msgstr ""
 #. Translators: Spoken when the document has no text with color information to
 #. audit
 #: addon/globalPlugins/contrast_checker/__init__.py:343
-#, fuzzy
 msgid "No text with color information found"
 msgstr "Aucun texte comportant des informations de couleur n'a été trouvé"
 
 #. Translators: Spoken when the contrast audit finds no failures
 #: addon/globalPlugins/contrast_checker/__init__.py:352
-#, fuzzy
 msgid "No contrast failures found"
 msgstr "Aucun défaut de contraste trouvé"
 
@@ -135,14 +122,12 @@ msgstr "Aucun défaut de contraste trouvé"
 #. audit
 #. results
 #: addon/globalPlugins/contrast_checker/__init__.py:356
-#, fuzzy
 msgid "Page contrast audit"
 msgstr "Audit de contraste de la page"
 
 #. Translators: Description of the script that scans the page for contrast
 #. failures, shown in the Input Gestures dialog
 #: addon/globalPlugins/contrast_checker/__init__.py:359
-#, fuzzy
 msgid "Scan the current document for color contrast failures"
 msgstr ""
 "Analyse le document actuel à la recherche de défauts de contraste de couleur"
@@ -151,7 +136,6 @@ msgstr ""
 #. Translators: Summary/title for this add-on
 #. to be shown on installation and add-on information found in add-on store
 #: buildVars.py:21
-#, fuzzy
 msgid "Color Contrast Checker for NVDA"
 msgstr "Vérificateur de contraste de couleur pour NVDA"
 
@@ -159,7 +143,6 @@ msgstr "Vérificateur de contraste de couleur pour NVDA"
 #. Translators: Long description to be shown for this add-on on add-on
 #. information from add-on store
 #: buildVars.py:24
-#, fuzzy
 msgid ""
 "Add-on that presents the color contrast of the system carrot, navigator object, and all elements on the page.\n"
 "Primarily useful for helping blind digital accessibility testers determine whether visible text and controls meet threshholds set out by the Web Content Accessibility Guidelines (WCAG)."
@@ -171,7 +154,6 @@ msgstr ""
 #. Translators: what's new content for the add-on version to be shown in the
 #. add-on store
 #: buildVars.py:30
-#, fuzzy
 msgid ""
 "New in version 2026.06.12:\n"
 "Made it possible to press NVDA+shift+C twice quickly to present the contrast of the focus indicator in browse mode.\n"
