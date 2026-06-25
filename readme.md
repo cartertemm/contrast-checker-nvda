@@ -47,8 +47,8 @@ Please note that this command only checks text that is visible in the current pa
 
 ## Installation
 
-1. Download the latest release from [this link](https://github.com/cartertemm/contrast-checker-nvda/releases/latest/).
-2. Open the .nvda-addon file with NVDA running. NVDA will prompt you to install.
+1. Install from the NVDA add-on store (NVDA menu -> Tools -> Addon store -> Available add-ons tab -> Color contrast checker for NVDA -> Actions -> Install). Alternatively, download the latest release from [this link](https://github.com/cartertemm/contrast-checker-nvda/releases/latest/).
+2. If you aren't obtaining it from the add-on store, open the .nvda-addon file with NVDA running. NVDA will prompt you to install.
 
 ## Try it out
 
