@@ -220,8 +220,11 @@ def _bucket_results(entries):
 def _build_audit_html(below_3, below_4_5, below_7):
 	parts = []
 	for heading, bucket in (
+		# Translators: Heading in the contrast audit report for elements below the 3:1 ratio
 		(_("Below 3:1 (large text or UI components)"), below_3),
+		# Translators: Heading in the contrast audit report for elements below the 4.5:1 ratio
 		(_("Below 4.5:1 (normal or small text)"), below_4_5),
+		# Translators: Heading in the contrast audit report for elements below the 7:1 (AAA) ratio
 		(_("Below 7:1 (AAA level)"), below_7),
 	):
 		if not bucket:
@@ -232,6 +235,7 @@ def _build_audit_html(below_3, below_4_5, below_7):
 			parts.append(f"<li>{text}: {_hex(e.fg)} on {_hex(e.bg)}, {e.ratio:.1f}:1</li>")
 		parts.append("</ul>")
 	if not parts:
+		# Translators: Shown in the contrast audit report when no contrast failures were found
 		return f"<p>{html.escape(_('No contrast failures found'))}</p>"
 	return "".join(parts)
 
@@ -253,6 +257,7 @@ def _patched_getFormatFieldSpeech(attrs, attrsCache=None, formatConfig=None, **k
 
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
+	# Translators: Category for this add-on's scripts shown in the Input Gestures dialog
 	scriptCategory = _("Contrast Checker")
 
 	def __init__(self):
@@ -334,6 +339,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return
 		raw = _collect_contrast_data(obj)
 		if not raw:
+			# Translators: Spoken when the document has no text with color information to audit
 			ui.message(_("No text with color information found"))
 			return
 		entries = [
@@ -342,9 +348,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		]
 		below_3, below_4_5, below_7 = _bucket_results(entries)
 		if not below_3 and not below_4_5 and not below_7:
+			# Translators: Spoken when the contrast audit finds no failures
 			ui.message(_("No contrast failures found"))
 			return
 		html_content = _build_audit_html(below_3, below_4_5, below_7)
+		# Translators: Title of the browse mode dialog showing the page contrast audit results
 		ui.browseableMessage(html_content, _("Page contrast audit"), isHtml=True)
 
 	# Translators: Description of the script that scans the page for contrast failures, shown in the Input Gestures dialog
