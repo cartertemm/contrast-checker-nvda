@@ -45,6 +45,14 @@ Text that meets 7:1 or better passes all WCAG thresholds and is omitted. If noth
 
 Please note that this command only checks text that is visible in the current page state. You still need to reveal and test other states such as focus, hover, expanded or collapsed content, lazy-loaded content, and custom-rendered or image-based text. Focus-ring contrast is checked separately with **NVDA+Shift+C**.
 
+## How it works
+
+This add-on runs entirely on your machine. It does not use artificial intelligence and makes no network requests of any kind.
+
+For text contrast, it reads the foreground and background colors that NVDA exposes for the current text. It converts each sRGB color to relative luminance, then applies the [WCAG contrast formula](https://www.w3.org/WAI/GL/wiki/Contrast_ratio).
+
+For focus indicators, it captures a small area of the screen around the focused element using Windows screen-capture APIs. Pixels are sampled around the element to identify the surrounding background and the highest-contrast color transition near its edges. Then, the contrast ratio between those colors is calculated using the same formula.
+
 ## Installation
 
 1. Install from the NVDA add-on store (NVDA menu -> Tools -> Addon store -> Available add-ons tab -> Color contrast checker for NVDA -> Actions -> Install). Alternatively, download the latest release from [this link](https://github.com/cartertemm/contrast-checker-nvda/releases/latest/).
