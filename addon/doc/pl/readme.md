@@ -45,10 +45,18 @@ Tekst, który osiąga 7:1 lub lepiej, spełnia wszystkie progi WCAG i jest pomij
 
 Pamiętaj, że to polecenie sprawdza tylko tekst widoczny w bieżącym stanie strony. Nadal musisz odsłonić i przetestować inne stany, takie jak fokus, najechanie kursorem, rozwinięta lub zwinięta treść, treść ładowana z opóźnieniem oraz tekst renderowany niestandardowo lub oparty na obrazach. Kontrast obwódki fokusu sprawdza się osobno za pomocą **NVDA+Shift+C**.
 
+## Jak to działa
+
+Ten dodatek działa w całości na Twoim komputerze. Nie używa sztucznej inteligencji i nie wykonuje żadnych żądań sieciowych.
+
+W przypadku kontrastu tekstu odczytuje kolory pierwszego planu i tła, które NVDA udostępnia dla bieżącego tekstu. Konwertuje każdy kolor sRGB na luminancję względną, a następnie stosuje [wzór kontrastu WCAG](https://www.w3.org/WAI/GL/wiki/Contrast_ratio).
+
+W przypadku wskaźników fokusu przechwytuje niewielki obszar ekranu wokół elementu z fokusem za pomocą interfejsów API systemu Windows do przechwytywania ekranu. Piksele wokół elementu są próbkowane w celu zidentyfikowania otaczającego tła oraz przejścia kolorów o najwyższym kontraście w pobliżu jego krawędzi. Następnie współczynnik kontrastu między tymi kolorami jest obliczany według tego samego wzoru.
+
 ## Instalacja
 
-1. Pobierz najnowsze wydanie z [tego odnośnika](https://github.com/cartertemm/contrast-checker-nvda/releases/latest/).
-2. Otwórz plik .nvda-addon przy uruchomionym NVDA. NVDA zaproponuje instalację.
+1. Zainstaluj ze sklepu z dodatkami NVDA (menu NVDA -> Narzędzia -> Sklep z dodatkami -> karta Dostępne dodatki -> Sprawdzanie kontrastu kolorów dla NVDA -> Akcje -> Zainstaluj). Możesz też pobrać najnowsze wydanie z [tego odnośnika](https://github.com/cartertemm/contrast-checker-nvda/releases/latest/).
+2. Jeśli nie pobierasz dodatku ze sklepu z dodatkami, otwórz plik .nvda-addon przy uruchomionym NVDA. NVDA zaproponuje instalację.
 
 ## Wypróbuj
 

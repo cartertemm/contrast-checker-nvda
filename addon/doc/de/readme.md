@@ -45,10 +45,18 @@ Text, der 7:1 oder besser erreicht, besteht alle WCAG-Schwellenwerte und wird au
 
 Bitte beachten Sie, dass dieser Befehl nur den im aktuellen Seitenzustand sichtbaren Text prüft. Sie müssen weiterhin andere Zustände wie Fokus, Mauszeigerkontakt, ein- oder ausgeklappte Inhalte, verzögert geladene Inhalte sowie benutzerdefiniert dargestellten oder bildbasierten Text einblenden und testen. Der Kontrast des Fokusrings wird separat mit **NVDA+Umschalt+C** geprüft.
 
+## Funktionsweise
+
+Dieses Add-on läuft vollständig auf Ihrem Rechner. Es verwendet keine künstliche Intelligenz und stellt keinerlei Netzwerkanfragen.
+
+Für den Textkontrast liest es die Vordergrund- und Hintergrundfarben, die NVDA für den aktuellen Text bereitstellt. Es wandelt jede sRGB-Farbe in relative Leuchtdichte um und wendet dann die [WCAG-Kontrastformel](https://www.w3.org/WAI/GL/wiki/Contrast_ratio) an.
+
+Für Fokusindikatoren erfasst es mithilfe der Windows-APIs zur Bildschirmaufnahme einen kleinen Bildschirmbereich um das fokussierte Element. Pixel um das Element herum werden abgetastet, um den umgebenden Hintergrund und den kontrastreichsten Farbübergang nahe seinen Rändern zu ermitteln. Anschließend wird das Kontrastverhältnis zwischen diesen Farben mit derselben Formel berechnet.
+
 ## Installation
 
-1. Laden Sie die neueste Version über [diesen Link](https://github.com/cartertemm/contrast-checker-nvda/releases/latest/) herunter.
-2. Öffnen Sie die Datei .nvda-addon bei laufendem NVDA. NVDA fordert Sie zur Installation auf.
+1. Installieren Sie das Add-on über den NVDA Add-on Store (NVDA-Menü -> Extras -> Add-on Store -> Registerkarte „Verfügbare Add-ons“ -> Farbkontrastprüfung für NVDA -> Aktionen -> Installieren). Alternativ können Sie die neueste Version über [diesen Link](https://github.com/cartertemm/contrast-checker-nvda/releases/latest/) herunterladen.
+2. Wenn Sie es nicht über den Add-on Store beziehen, öffnen Sie die Datei .nvda-addon bei laufendem NVDA. NVDA fordert Sie zur Installation auf.
 
 ## Ausprobieren
 

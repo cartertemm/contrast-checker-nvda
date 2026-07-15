@@ -45,10 +45,18 @@ Le texte qui atteint 7:1 ou mieux passe tous les seuils WCAG et est omis. Si rie
 
 Veuillez noter que cette commande ne vérifie que le texte visible dans l'état actuel de la page. Vous devez encore révéler et tester d'autres états comme le focus, le survol, le contenu déplié ou replié, le contenu chargé de manière différée, et le texte personnalisé ou basé sur des images. Le contraste de l'anneau de focus se vérifie séparément avec **NVDA+Shift+C**.
 
+## Fonctionnement
+
+Ce module complémentaire s'exécute entièrement sur votre machine. Il n'utilise pas d'intelligence artificielle et n'effectue aucune requête réseau.
+
+Pour le contraste du texte, il lit les couleurs de premier plan et d'arrière-plan que NVDA expose pour le texte actuel. Il convertit chaque couleur sRGB en luminance relative, puis applique la [formule de contraste WCAG](https://www.w3.org/WAI/GL/wiki/Contrast_ratio).
+
+Pour les indicateurs de focus, il capture une petite zone de l'écran autour de l'élément ciblé à l'aide des API de capture d'écran de Windows. Des pixels sont échantillonnés autour de l'élément pour identifier l'arrière-plan environnant et la transition de couleur au contraste le plus élevé près de ses bords. Ensuite, la relation de contraste entre ces couleurs est calculée avec la même formule.
+
 ## Installation
 
-1. Téléchargez la dernière version depuis [ce lien](https://github.com/cartertemm/contrast-checker-nvda/releases/latest/).
-2. Ouvrez le fichier .nvda-addon avec NVDA en cours d'exécution. NVDA vous proposera de l'installer.
+1. Installez-le depuis la boutique de modules complémentaires de NVDA (menu NVDA -> Outils -> Boutique de modules complémentaires -> onglet Modules complémentaires disponibles -> Vérificateur de contraste de couleur pour NVDA -> Actions -> Installer). Vous pouvez aussi télécharger la dernière version depuis [ce lien](https://github.com/cartertemm/contrast-checker-nvda/releases/latest/).
+2. Si vous ne l'obtenez pas depuis la boutique de modules complémentaires, ouvrez le fichier .nvda-addon avec NVDA en cours d'exécution. NVDA vous proposera de l'installer.
 
 ## Essayez-le
 

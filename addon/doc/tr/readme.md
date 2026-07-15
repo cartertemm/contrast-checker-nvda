@@ -45,10 +45,18 @@ Geçerli sayfadaki her metin parçasını tek seferde taramak için **NVDA+Shift
 
 Lütfen bu komutun yalnızca sayfanın geçerli durumunda görünen metni kontrol ettiğini unutmayın. Odak, üzerine gelme, genişletilmiş veya daraltılmış içerik, geç yüklenen içerik ve özel olarak işlenmiş veya görsele dayalı metin gibi diğer durumları yine de göstermeniz ve test etmeniz gerekir. Odak halkası kontrastı, **NVDA+Shift+C** ile ayrıca kontrol edilir.
 
+## Nasıl çalışır
+
+Bu eklenti tamamen bilgisayarınızda çalışır. Yapay zeka kullanmaz ve hiçbir türde ağ isteği yapmaz.
+
+Metin kontrastı için, NVDA'nın geçerli metin için sunduğu ön plan ve arka plan renklerini okur. Her sRGB rengini bağıl parlaklığa dönüştürür ve ardından [WCAG kontrast formülünü](https://www.w3.org/WAI/GL/wiki/Contrast_ratio) uygular.
+
+Odak göstergeleri için, Windows ekran yakalama API'lerini kullanarak odaklanmış öğenin çevresindeki küçük bir ekran alanını yakalar. Çevreleyen arka planı ve öğenin kenarlarına yakın en yüksek kontrastlı renk geçişini belirlemek için öğenin çevresindeki pikseller örneklenir. Ardından bu renkler arasındaki kontrast oranı aynı formülle hesaplanır.
+
 ## Kurulum
 
-1. En son sürümü [bu bağlantıdan](https://github.com/cartertemm/contrast-checker-nvda/releases/latest/) indirin.
-2. NVDA çalışırken .nvda-addon dosyasını açın. NVDA sizden kurmanızı isteyecektir.
+1. NVDA eklenti mağazasından kurun (NVDA menüsü -> Araçlar -> Eklenti mağazası -> Kurulabilir eklentiler sekmesi -> NVDA için Renk Kontrast Denetleyicisi -> Eylemler -> Kur). Alternatif olarak, en son sürümü [bu bağlantıdan](https://github.com/cartertemm/contrast-checker-nvda/releases/latest/) indirebilirsiniz.
+2. Eklentiyi mağazadan edinmiyorsanız, NVDA çalışırken .nvda-addon dosyasını açın. NVDA sizden kurmanızı isteyecektir.
 
 ## Deneyin
 

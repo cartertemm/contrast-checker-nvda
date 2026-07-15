@@ -45,10 +45,18 @@ El texto que alcanza 7:1 o más pasa todos los umbrales de WCAG y se omite. Si n
 
 Ten en cuenta que este comando solo comprueba el texto visible en el estado actual de la página. Aún necesitas mostrar y probar otros estados como el foco, el paso del puntero, el contenido expandido o contraído, el contenido cargado de forma diferida y el texto personalizado o basado en imágenes. El contraste del anillo de foco se comprueba por separado con **NVDA+Shift+C**.
 
+## Cómo funciona
+
+Este complemento se ejecuta completamente en tu equipo. No usa inteligencia artificial y no realiza ninguna petición de red.
+
+Para el contraste del texto, lee los colores de primer plano y de fondo que NVDA expone para el texto actual. Convierte cada color sRGB a luminancia relativa y después aplica la [fórmula de contraste de WCAG](https://www.w3.org/WAI/GL/wiki/Contrast_ratio).
+
+Para los indicadores de foco, captura una pequeña área de la pantalla alrededor del elemento enfocado mediante las API de captura de pantalla de Windows. Se muestrean los píxeles alrededor del elemento para identificar el fondo circundante y la transición de color de mayor contraste cerca de sus bordes. Después, la relación de contraste entre esos colores se calcula con la misma fórmula.
+
 ## Instalación
 
-1. Descarga la última versión desde [este enlace](https://github.com/cartertemm/contrast-checker-nvda/releases/latest/).
-2. Abre el archivo .nvda-addon con NVDA en ejecución. NVDA te pedirá que lo instales.
+1. Instálalo desde la tienda de complementos de NVDA (menú NVDA -> Herramientas -> Tienda de complementos -> pestaña Complementos disponibles -> Comprobador de contraste de color para NVDA -> Acciones -> Instalar). Como alternativa, descarga la última versión desde [este enlace](https://github.com/cartertemm/contrast-checker-nvda/releases/latest/).
+2. Si no lo obtienes desde la tienda de complementos, abre el archivo .nvda-addon con NVDA en ejecución. NVDA te pedirá que lo instales.
 
 ## Pruébalo
 
