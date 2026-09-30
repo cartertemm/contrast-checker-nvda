@@ -43,7 +43,7 @@ msgstr "Unter 7:1 (Stufe AAA)"
 #. color, and their contrast ratio. {fg} and {bg} are hex color codes, {ratio}
 #. is a number like 4.5
 #: addon/globalPlugins/contrast_checker/__init__.py:256
-#, python-brace-format, fuzzy
+#, python-brace-format
 msgid "{fg} on {bg}, contrast {ratio}:1"
 msgstr "{fg} auf {bg}, Kontrast {ratio}:1"
 
@@ -86,7 +86,7 @@ msgstr "Bildschirmfarben konnten nicht abgetastet werden"
 #. {ratio}
 #. is a number like 4.5
 #: addon/globalPlugins/contrast_checker/__init__.py:320
-#, python-brace-format, fuzzy
+#, python-brace-format
 msgid "Focus indicator: {indicator} on {bg}, contrast {ratio}:1"
 msgstr "Fokusindikator: {indicator} auf {bg}, Kontrast {ratio}:1"
 
