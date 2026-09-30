@@ -1,19 +1,19 @@
 # Vérificateur de contraste de couleur pour NVDA
 
-Les testeurs d'accessibilité numérique doivent régulièrement s'assurer que les relations de contraste de couleur se situent dans les seuils définis par les Règles pour l'accessibilité des contenus Web (WCAG). Or, il a toujours été difficile pour les testeurs aveugles de le faire sans dépendre de collègues voyants ou de solutions automatisées. La plupart des solutions automatisées du marché, dont WAVE et axe DevTools, ne filtrent les problèmes de contraste que sous forme de « suggestions », passent à côté de certaines choses et n'examinent pas l'indicateur de focus.
+Les testeurs d'accessibilité numérique doivent régulièrement s'assurer que les rapports de contraste de couleur se situent dans les seuils définis par les Règles pour l'accessibilité des contenus Web (WCAG). Or, il a toujours été difficile pour les testeurs aveugles de le faire sans dépendre de collègues voyants ou de solutions automatisées. La plupart des solutions automatisées du marché, dont WAVE et axe DevTools, ne filtrent les problèmes de contraste que sous forme de « suggestions », passent à côté de certaines choses et n'examinent pas l'indicateur de focus.
 
 Ce module complémentaire vous permet de vérifier le contraste de l'élément ciblé avec NVDA+F, de l'élément sous le curseur de revue avec NVDA+Shift+F, de l'indicateur de focus avec NVDA+Shift+C, et de lancer un audit de toute la page de tous les défauts de contraste de texte avec NVDA+Shift+Ctrl+F.
 
 | Tâche | Commande | Portée |
 | --- | --- | --- |
-| Vérifier le contraste du texte ciblé | **NVDA+F** | Informations de formatage de l'élément ciblé, dont la relation de contraste |
-| Vérifier le contraste du texte au curseur de revue | **NVDA+Shift+F** | Informations de formatage à la position du curseur de revue, dont la relation de contraste |
+| Vérifier le contraste du texte ciblé | **NVDA+F** | Informations de formatage de l'élément ciblé, dont le rapport de contraste |
+| Vérifier le contraste du texte au curseur de revue | **NVDA+Shift+F** | Informations de formatage à la position du curseur de revue, dont le rapport de contraste |
 | Vérifier le contraste de l'indicateur de focus | **NVDA+Shift+C** | Anneau de focus par rapport à l'arrière-plan environnant |
 | Lancer un audit de texte sur toute la page | **NVDA+Shift+Ctrl+F** | Texte visible sur la page actuelle, regroupé par seuil de contraste WCAG |
 
 ## Contraste du texte
 
-Ce module complémentaire étend les commandes d'information de formatage existantes de NVDA. Appuyez sur **NVDA+F** sur n'importe quel texte pour entendre les informations de formatage, dont la relation de contraste. Exemple :
+Ce module complémentaire étend les commandes d'information de formatage existantes de NVDA. Appuyez sur **NVDA+F** sur n'importe quel texte pour entendre les informations de formatage, dont le rapport de contraste. Exemple :
 
 - Source Sans 3 ExtraLight
 - 10.5pt
@@ -51,7 +51,7 @@ Ce module complémentaire s'exécute entièrement sur votre machine. Il n'utilis
 
 Pour le contraste du texte, il lit les couleurs de premier plan et d'arrière-plan que NVDA expose pour le texte actuel. Il convertit chaque couleur sRGB en luminance relative, puis applique la [formule de contraste WCAG](https://www.w3.org/WAI/GL/wiki/Contrast_ratio).
 
-Pour les indicateurs de focus, il capture une petite zone de l'écran autour de l'élément ciblé à l'aide des API de capture d'écran de Windows. Des pixels sont échantillonnés autour de l'élément pour identifier l'arrière-plan environnant et la transition de couleur au contraste le plus élevé près de ses bords. Ensuite, la relation de contraste entre ces couleurs est calculée avec la même formule.
+Pour les indicateurs de focus, il capture une petite zone de l'écran autour de l'élément ciblé à l'aide des API de capture d'écran de Windows. Des pixels sont échantillonnés autour de l'élément pour identifier l'arrière-plan environnant et la transition de couleur au contraste le plus élevé près de ses bords. Ensuite, le rapport de contraste entre ces couleurs est calculé avec la même formule.
 
 ## Installation
 
