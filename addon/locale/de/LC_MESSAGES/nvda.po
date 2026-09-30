@@ -143,8 +143,8 @@ msgstr "Farbkontrastprüfung für NVDA"
 #. information from add-on store
 #: buildVars.py:24
 msgid ""
-"Add-on that presents the color contrast of the system carrot, navigator object, and all elements on the page.\n"
-"Primarily useful for helping blind digital accessibility testers determine whether visible text and controls meet threshholds set out by the Web Content Accessibility Guidelines (WCAG)."
+"Add-on that presents the color contrast of the system caret, navigator object, and all elements on the page.\n"
+"Primarily useful for helping blind digital accessibility testers determine whether visible text and controls meet thresholds set out by the Web Content Accessibility Guidelines (WCAG)."
 msgstr ""
 "Add-on, das den Farbkontrast des System-Cursors, des Navigator-Objekts und aller Elemente auf der Seite darstellt.\n"
 "Vor allem nützlich, um blinden Testern der digitalen Barrierefreiheit dabei zu helfen, festzustellen, ob sichtbarer Text und Steuerelemente die in den Web Content Accessibility Guidelines (WCAG) festgelegten Schwellenwerte erfüllen."

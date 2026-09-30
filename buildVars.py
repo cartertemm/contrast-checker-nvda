@@ -21,8 +21,8 @@ addon_info = AddonInfo(
 	addon_summary=_("Color Contrast Checker for NVDA"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-on store
-	addon_description=_("""Add-on that presents the color contrast of the system carrot, navigator object, and all elements on the page.
-Primarily useful for helping blind digital accessibility testers determine whether visible text and controls meet threshholds set out by the Web Content Accessibility Guidelines (WCAG)."""),
+	addon_description=_("""Add-on that presents the color contrast of the system caret, navigator object, and all elements on the page.
+Primarily useful for helping blind digital accessibility testers determine whether visible text and controls meet thresholds set out by the Web Content Accessibility Guidelines (WCAG)."""),
 	# version
 	addon_version="2026.06.12",
 	# Brief changelog for this version

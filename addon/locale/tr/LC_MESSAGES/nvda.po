@@ -143,8 +143,8 @@ msgstr "NVDA için Renk Kontrast Denetleyicisi"
 #. information from add-on store
 #: buildVars.py:24
 msgid ""
-"Add-on that presents the color contrast of the system carrot, navigator object, and all elements on the page.\n"
-"Primarily useful for helping blind digital accessibility testers determine whether visible text and controls meet threshholds set out by the Web Content Accessibility Guidelines (WCAG)."
+"Add-on that presents the color contrast of the system caret, navigator object, and all elements on the page.\n"
+"Primarily useful for helping blind digital accessibility testers determine whether visible text and controls meet thresholds set out by the Web Content Accessibility Guidelines (WCAG)."
 msgstr ""
 "Sistem düzeltme imlecinin, nesne sunucusunun ve sayfadaki tüm öğelerin renk kontrastını sunan eklenti.\n"
 "Öncelikle görme engelli dijital erişilebilirlik test uzmanlarının, görünür metin ve denetimlerin Web İçeriği Erişilebilirlik Kılavuzu'nda (WCAG) belirlenen eşikleri karşılayıp karşılamadığını belirlemelerine yardımcı olmak için kullanışlıdır."
