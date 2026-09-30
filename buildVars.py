@@ -24,10 +24,13 @@ addon_info = AddonInfo(
 	addon_description=_("""Add-on that presents the color contrast of the system caret, navigator object, and all elements on the page.
 Primarily useful for helping blind digital accessibility testers determine whether visible text and controls meet thresholds set out by the Web Content Accessibility Guidelines (WCAG)."""),
 	# version
-	addon_version="2026.06.12",
+	addon_version="2026.09.30",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog=_("""New in version 2026.06.12:
+	addon_changelog=_("""New in version 2026.09.30:
+Added translations for French, German, Polish, Russian, Spanish, and Turkish.
+Added a section to the documentation that explains how the add-on works.
+New in version 2026.06.12:
 Made it possible to press NVDA+shift+C twice quickly to present the contrast of the focus indicator in browse mode.
 Switch to calendar versioning, i.e. yyyy.mm.dd to maintain consistency with my other add-ons.
 New in version 0.4:
