@@ -44,7 +44,7 @@ Added a document with test scenarios (tests/contrast.html) that can be used to m
 New in version 0.1:
 Initial version. Please consult this add-ons documentation to learn how it works."""),
 	# Author(s)
-	addon_author="Carter Temm <cartertemm@gmail.com>",
+	addon_author="Carter Temm <carter@ctemm.me>",
 	# URL for the add-on documentation support
 	addon_url=None,
 	# URL for the add-on repository where the source code can be found
